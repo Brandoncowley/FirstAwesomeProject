@@ -15,7 +15,7 @@ var requestUrl = 'http://www.boredapi.com/api/activity/';
 //LAYOUT: list, "click here for more information" - give items above
 // - ALSO - possible tie in for musical selection
 
-
+//Using modals are "like" popups, but not as restrictive
 
 //Melina's notes for branch testing
     
