@@ -2,6 +2,9 @@
 //ADD APIs HERE
 var requestUrl = 'http://www.boredapi.com/api/activity/';
 
+console.log("testing")
+console.log(requestUrl)
+
 //SECOND API - pull info from general query
 //SECOND API - insert image that ties to the activity (Unsplash?)
 
