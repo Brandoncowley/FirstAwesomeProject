@@ -18,4 +18,4 @@ var requestUrl = 'http://www.boredapi.com/api/activity/';
 
 
 //Melina's notes for branch testing
-    
+
