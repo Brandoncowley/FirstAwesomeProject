@@ -2,6 +2,37 @@
 //ADD APIs HERE
 var requestUrl = 'http://www.boredapi.com/api/activity/';
 
+var activityEl= document.getElementById('activity')
+
+
+
+function getApi(){
+    fetch (requestUrl)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function (data1){
+       getActivity(data1)
+       
+
+        
+    })
+}
+
+
+//
+getApi();
+
+function getActivity(data1){
+    
+    var randomActivity = data1.activity
+    
+    activityEl.innerHTML = randomActivity
+    
+}
+
+
+
 //SECOND API - pull info from general query
 //SECOND API - insert image that ties to the activity (Unsplash?)
 
