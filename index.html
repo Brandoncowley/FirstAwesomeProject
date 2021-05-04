@@ -34,7 +34,7 @@
         
           <div class="col s12 center">
             <h4>Search your Activity Category</h4>
-            <input list="activities" type="text" id="searchBar">
+            <input list="activities" type="text" id="searchBar" size="26px">
               <datalist id="activities">
                 <option value="Busywork">
                 <option value="Charity">
@@ -46,7 +46,7 @@
                 <option value="Relaxation">
                 <option value="Social"></option>
               </datalist>
-        </div>
+          </div>
       </div>
     </div>
   </div>
@@ -65,18 +65,22 @@
   <div class="container space-even">
     <div class="section">
       <div class="row">
-        <div class="col lg3">
-          <h3>ACTIVITY</h3>
+        <div class="col lg3 card">
+          <h3 id = "activity">ACTIVITY</h3>
+          <p id = "activity-p"></p>
         </div>
-        <div class="col lg3">
-          <h3>PRICE</h3>
+        <div class="col lg3 card">
+          <h3 id = "price">PRICE</h3>
+          <p id = "price-p"></p>
         </div>
-        <div class="col lg3">
-          <h3>PARTICIPANTS</h3>
+        <div class="col lg3 card">
+          <h3 id = "participants">PARTICIPANTS</h3>
+          <p id = "participants-p"></p>
         </div>
-        <div class="col lg3" id="image-container">
-          <h3>IMAGE</h3>
-        </div>
+      </div>
+      <div class="col lg3 card">
+        <h3 id = "image">IMAGE</h3>
+        <img id = "image-img"></img>
       </div>
     </div>
   </div>
