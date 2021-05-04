@@ -2,7 +2,13 @@ const activityEl = document.getElementById('activity-p')
 const priceEl = document.getElementById('price-p')
 const participantsEl = document.getElementById('participants-p')
 
-console.log(activityEl)
+
+
+
+
+
+
+
 
 
 
@@ -13,7 +19,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //ADD APIs HERE
     var requestUrl = "http://www.boredapi.com/api/activity/"
 
-    var activityEl = document.getElementById('activity')
+    //var activityEl = document.getElementById('activity')
 
     var selectedActivity = 'recreational'
 
@@ -79,7 +85,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //Melina's notes for branch testing
 
 
-});
+})
 
 
 
@@ -171,16 +177,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-
-
-
-
+var category = 'educational';
+if (category === 'Busywork') {
+    category = 'chores'
+};
+var key = '&client_id=n2fGqHKjWmuL15Ufx1eLf0EYsFiL2psgSMrAcGiciX4'
 function getUnsplashApi(category) {
-    if (category === 'Busywork') {
-        category = 'chores'
-    };
-    
-    var key = '&client_id=n2fGqHKjWmuL15Ufx1eLf0EYsFiL2psgSMrAcGiciX4'
     var requestUrl = 'https://api.unsplash.com/search/photos?page=1&query=' + category + key
     console.log(requestUrl);
     fetch(requestUrl)
@@ -202,13 +204,7 @@ var displayPhoto = function (photoList, category) {
     var currentPhotoNum = (Math.floor(Math.random()*11));
     console.log(photoList.results[currentPhotoNum].urls.small);
     console.log(photoList.results[currentPhotoNum].alt_description);
-
-    var image = document.getElementById('image-img');
-    var photoUrl =  photoList.results[currentPhotoNum].urls.small;
-    image.src = photoList.results[currentPhotoNum].urls.small;
-    image.alt = photoList.results[currentPhotoNum].alt_description;
 }
-
-
-
-getUnsplashApi('Educational');
+var imageContainer = document.getElementById('#image-container')
+var image = document.createElement('img');
+getUnsplashApi(category);
