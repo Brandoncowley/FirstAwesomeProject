@@ -15,11 +15,11 @@ function getUnsplashApi(category) {
                     displayPhoto(data, category);
                 });
             } else {
-                alert('Error:' + response.statusText);
+                alert('Error: ' + response.statusText);
             }
         })
         .catch(function(error) {
-            alert('unable to connect to open Weather');
+            alert('unable to connect to Unsplash');
         });
 };
 
@@ -29,6 +29,10 @@ var displayPhoto = function (photoList, category) {
     console.log(photoList.results[currentPhotoNum].urls.small);
     console.log(photoList.results[currentPhotoNum].alt_description);
 }
+
+var imageContainer = document.getElementById('#image-container')
+var image = document.createElement('img');
+
 
 
 getUnsplashApi(category);
