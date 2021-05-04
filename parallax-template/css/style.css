@@ -50,5 +50,13 @@ p {
 .space-even {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: top;
+  min-width: 100vw;
+  height: 500px;
+
 }
+
+.card {
+  min-width: 33vw;
+}
+
