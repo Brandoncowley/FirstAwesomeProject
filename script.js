@@ -1,3 +1,12 @@
+const activityEl = document.getElementById('activity-p')
+const priceEl = document.getElementById('price-p')
+const participantsEl = document.getElementById('participants-p')
+
+console.log(activityEl)
+
+
+
+
 document.addEventListener('DOMContentLoaded', (event) => {
     event.preventDefault()
     //JS sheet begins here
@@ -6,7 +15,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     var activityEl = document.getElementById('activity')
 
-    var selectedActivity = 'education'
+    var selectedActivity = 'recreational'
 
     var apiQuery = "http://www.boredapi.com/api/activity?type=" + selectedActivity
 
@@ -27,10 +36,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //
     
     function getActivity(data1) {
+        console.log(data1)
         var getActivity = data1.activity
         var getParticipant = data1.participants
         var getType = data1.type
         var getPrice = data1.price
+        activityEl.innerHTML = getActivity
+        console.log(data1.price)
+        console.log(data1.activity)
+
+        if (data1.price == 0)
+        console.log("Free");
+        else if (data1.price > 0 && data1.price <= .2)
+            console.log("Cheap")
+        else if (data1.price >.2 && data1.price <= .5)
+            console.log("Moderate")
+            else  
+            console.log("Expensive")
+        
+        
     }
     
     getApi();
