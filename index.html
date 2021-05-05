@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>First Awesome Project</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="parallax-template/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="parallax-template/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="parallax-template/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="parallax-template/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
+
 <body>
 
   <div id="index-banner" class="parallax-container">
@@ -32,25 +34,25 @@
     <div class="section">
       <div class="row">
 
-        
-          <div class="col s12 center">
-            <h4>Search your Activity Category</h4>
-            <input list="activities" type="text" id="searchBar" size="26px">
-              <datalist id="activities">
-                <option value="Busywork">
-                <option value="Charity">
-                <option value="Cooking">
-                <option value="DIY">
-                <option value="Educational">
-                <option value="Music">
-                <option value="Recreational">
-                <option value="Relaxation">
-                <option value="Social"></option>
-              </datalist>
-              <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-              </button>
-          </div>
+
+        <div class="col s12 center">
+          <h4>Search your Activity Category</h4>
+          <input list="activities" type="text" id="searchBar" size="26px">
+          <datalist id="activities">
+            <option value="Busywork">
+            <option value="Charity">
+            <option value="Cooking">
+            <option value="DIY">
+            <option value="Educational">
+            <option value="Music">
+            <option value="Recreational">
+            <option value="Relaxation">
+            <option value="Social"></option>
+          </datalist>
+          <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -70,21 +72,30 @@
     <div class="section">
       <div class="row">
         <div class="col lg3 card">
-          <h3 id = "activity">ACTIVITY</h3>
-          <h4 id = "activity-p"></h4>
+          <h3 id="activity">ACTIVITY</h3>
+          <h4 id="activity-p"></h4>
         </div>
         <div class="col lg3 card">
-          <h3 id = "price">PRICE</h3>
-          <p><i class="fa fa-money fa-4x" aria-hidden="true"></i></p>
+          <h3 id="price">PRICE</h3>
+          <div id="price-p">
+            <i id = "moneyOne" class="fa fa-money fa-4x" aria-hidden="true"></i>
+            <i id ="moneyTwo"class="fa fa-money fa-4x" aria-hidden="true"></i>
+            <i id ="moneyThree"class="fa fa-money fa-4x" aria-hidden="true"></i>
+          </div>
         </div>
         <div class="col lg3 card">
-          <h3 id = "participants">PARTICIPANTS</h3>
-          <p id = "participants-p"></p>
+          <h3 id="participants">PARTICIPANTS</h3>
+          <div id="participants-p">
+            <i id ="personOne" class="fa fa-user fa-4x" aria-hidden="true"></i>
+            <i id="personTwo" class="fa fa-user fa-4x" aria-hidden="true"></i>
+            <i id ="personThree" class="fa fa-user fa-4x" aria-hidden="true"></i>
+
+          </div>
         </div>
       </div>
       <div class="col lg3 card">
-        <h3 id = "image">IMAGE</h3>
-        <img id = "image-img"></img>
+        <h3 id="image">IMAGE</h3>
+        <img id="image-img"></img>
       </div>
     </div>
   </div>
@@ -108,5 +119,6 @@
   <script src="parallax-template/js/init.js"></script>
   <script src="script.js"></script>
 
-  </body>
+</body>
+
 </html>
