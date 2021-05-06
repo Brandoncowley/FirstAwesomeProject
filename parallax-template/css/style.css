@@ -60,3 +60,6 @@ p {
   min-width: 33vw;
 }
 
+.hide {
+  display:none;
+}
