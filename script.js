@@ -3,6 +3,10 @@ const priceEl = document.getElementById('price-p')
 const participantsEl = document.getElementById('participants-p')
 var submitBtn = document.querySelector('.btn')
 console.log(activityEl)
+var resultSection = document.querySelector('#resultSection')
+console.log(resultSection);
+var searchAgainBtn = document.querySelector('#search-again');
+var searchActivityCategory = document.querySelector('#search-activity-category');
 
 var moneyOne = document.getElementById('moneyOne')
 var moneyTwo = document.getElementById('moneyTwo')
@@ -24,39 +28,45 @@ document.addEventListener('DOMContentLoaded', (event) => {
     event.preventDefault()
     //JS sheet begins here
     //ADD APIs HERE
-    var requestUrl = "http://www.boredapi.com/api/activity/"
+    //var requestUrl = "http://www.boredapi.com/api/activity/"
 
     var activityEl = document.getElementById('activity')
 
-    var selectedActivity;
+    
 
     function getActivityCategory() {
-        selectedActivity = document.getElementById('searchBar').value;
+        var selectedActivity = document.getElementById('searchBar').value;
         console.log(selectedActivity);
+        getApi(selectedActivity);
+        getUnsplashApi(selectedActivity);
     };
     
-
+  
     
 
-    var apiQuery = "http://www.boredapi.com/api/activity?type=" + selectedActivity
+    function getApi(selectedActivity) {
+        console.log(selectedActivity);
 
-    console.log(apiQuery)
+        apiQuery = "http://www.boredapi.com/api/activity?type=" + selectedActivity
 
-    function getApi() {
+        console.log(apiQuery);
+
         fetch(apiQuery)
             .then(function (response) {
                 return response.json();
             })
             .then(function (data1) {
-                return getActivity(data1)
+                getActivity(data1)
+                console.log(data1);
                 
             })
     }
 
-
-    //
     
     function getActivity(data1) {
+        
+        console.log(resultSection)
+        resultSection.classList.remove("hide");
 
         //Getting Values back out of Object from the Bored API
         console.log(data1)
@@ -100,11 +110,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 personThree.classList.add('hide')
             }
         }
-    checkParticipants();
+    
+    resultSection.scrollIntoView({behavior: 'smooth'});
     }
 
     
-    getApi();
+
 
 
 
@@ -123,109 +134,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     //Using modals are "like" popups, but not as restrictive
 
-    //Melina's notes for branch testing
 
 
 
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var category = 'educational';
-if (category === 'Busywork') {
-    category = 'chores'
-};
-var key = '&client_id=n2fGqHKjWmuL15Ufx1eLf0EYsFiL2psgSMrAcGiciX4'
 function getUnsplashApi(category) {
+    var key = '&client_id=n2fGqHKjWmuL15Ufx1eLf0EYsFiL2psgSMrAcGiciX4'
+    console.log(category);
     var requestUrl = 'https://api.unsplash.com/search/photos?page=1&query=' + category + key
     console.log(requestUrl);
     fetch(requestUrl)
@@ -247,16 +161,26 @@ var displayPhoto = function (photoList, category) {
     var currentPhotoNum = (Math.floor(Math.random()*11));
     console.log(photoList.results[currentPhotoNum].urls.small);
     console.log(photoList.results[currentPhotoNum].alt_description);
+    var imageContainer = document.getElementById('image-img');
+    console.log(imageContainer);
+    imageContainer.src = photoList.results[currentPhotoNum].urls.small;
+    imageContainer.alt = photoList.results[currentPhotoNum].alt_description;
+    // imageContainer.height = 250;
 }
 
 
-getUnsplashApi('Educational');
+// getUnsplashApi('Educational');
 
 submitBtn.addEventListener('click', getActivityCategory);
 
+function goHere () {
+    location.reload();
+    searchActivityCategory.scrollIntoView({behavior: 'smooth'});
+}
+searchAgainBtn.addEventListener('click', goHere);
+
 });
 
-var imageContainer = document.getElementById('#image-container')
-var image = document.createElement('img');
-getUnsplashApi(category);
+
+
 

@@ -3,3 +3,7 @@
 /*Data key can give visual representation (icon)*/
 
 /*RECOMMENDED FRAMEWORKS - Materialize*/
+
+#hide {
+    display: none;
+}
