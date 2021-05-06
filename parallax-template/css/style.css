@@ -53,13 +53,48 @@ p {
   align-items: top;
   min-width: 100vw;
   height: 500px;
-
 }
 
-.card {
-  min-width: 33vw;
+.header1 {
+  font-size: 72px;
 }
+
+.header {
+  font-size: 36px;
+}
+
+.details{
+  height: 100px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(4px);
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+.glass {
+  justify-content: center;
+  text-align: center;
+  font-size: 36px;
+}
+.activities {
+  min-width: 50VW;
+}
+
+
+.price {
+  min-width: 25vw;
+  text-align: center;
+}
+
+.participants {
+  min-width: 25vw;
+  text-align: center;
+}
+
+.image {
+  padding: 10%;
 
 .hide {
   display:none;
+
 }
