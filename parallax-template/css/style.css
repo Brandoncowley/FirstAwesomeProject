@@ -80,6 +80,7 @@ p {
   min-width: 50VW;
 }
 
+
 .price {
   min-width: 25vw;
   text-align: center;
@@ -92,4 +93,8 @@ p {
 
 .image {
   padding: 10%;
+
+.hide {
+  display:none;
+
 }

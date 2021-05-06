@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>First Awesome Project</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="parallax-template/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="parallax-template/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="parallax-template/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="parallax-template/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./style.css" />
+
 </head>
+
 <body>
 
   <div id="index-banner" class="parallax-container">
@@ -32,25 +37,7 @@
     <div class="section">
       <div class="row">
 
-        
-          <div class="col s12 center d-none">
-            <h4>Search your Activity Category</h4>
-            <input list="activities" type="text" id="searchBar" size="26px">
-              <datalist id="activities">
-                <option value="Busywork">
-                <option value="Charity">
-                <option value="Cooking">
-                <option value="DIY">
-                <option value="Educational">
-                <option value="Music">
-                <option value="Recreational">
-                <option value="Relaxation">
-                <option value="Social"></option>
-              </datalist>
-              <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-              </button>
-          </div>
+
       </div>
     </div>
   </div>
@@ -69,25 +56,11 @@
   </div>
 
   <div class="container space-even">
-    <div class="section">
+    <div class="section hide" id="resultSection">
       <div class="row">
-        <div class="col lg3 card activities">
-          <h3 id = "activity">ACTIVITY</h3>
-          <p id = "activity-p"></p>
-        </div>
-        <div class="col lg3 card price">
-          <h3 id = "price">PRICE</h3>
-          <p id = "price-p"></p>
-        </div>
-        <div class="col lg3 card participants">
-          <h3 id = "participants">PARTICIPANTS</h3>
-          <p id = "participants-p"></p>
-        </div>
+
       </div>
-      <div class="col lg3 card image">
-        <h3 id = "image">IMAGE</h3>
-        <img id = "image-img"></img>
-      </div>
+      
     </div>
   </div>
 
@@ -108,6 +81,8 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="parallax-template/js/materialize.js"></script>
   <script src="parallax-template/js/init.js"></script>
+  <script src="script.js"></script>
 
-  </body>
+</body>
+
 </html>
