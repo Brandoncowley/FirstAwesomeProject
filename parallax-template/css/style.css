@@ -48,11 +48,11 @@ p {
 }
 
 .space-even {
-  display: flex;
+  /* display: flex; */
   justify-content: space-evenly;
   align-items: top;
   min-width: 100vw;
-  height: 500px;
+  /* height: 500px; */
 }
 
 .header1 {
@@ -77,24 +77,46 @@ p {
   font-size: 36px;
 }
 .activities {
-  min-width: 50VW;
+  /* min-width: 50VW; */
+  text-align: center;
+  justify-content: center;
+
 }
 
 
 .price {
-  min-width: 25vw;
+  /* min-width: 25vw; */
   text-align: center;
+  justify-content: center;
+
 }
 
 .participants {
-  min-width: 25vw;
+  /* min-width: 25vw; */
+  text-align: center;
+  justify-content: center;
+
+}
+
+#image {
   text-align: center;
 }
 
-.image {
-  padding: 10%;
+#image-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+}
+
+.search-again{
+text-align: center;}
 
 .hide {
   display:none;
 
+}
+
+#hide {
+  display: none;
 }
