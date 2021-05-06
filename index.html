@@ -11,6 +11,8 @@
   <link href="parallax-template/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="parallax-template/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./style.css" />
+
 </head>
 
 <body>
@@ -36,18 +38,17 @@
 
 
         <div class="col s12 center">
-          <h4>Search your Activity Category</h4>
+          <h4 id="search-activity-category">Search your Activity Category</h4>
           <input list="activities" type="text" id="searchBar" size="26px">
           <datalist id="activities">
-            <option value="Busywork">
-            <option value="Charity">
-            <option value="Cooking">
-            <option value="DIY">
-            <option value="Educational">
-            <option value="Music">
-            <option value="Recreational">
-            <option value="Relaxation">
-            <option value="Social"></option>
+            <option value="charity">
+            <option value="cooking">
+            <option value="diy">
+            <option value="education">
+            <option value="music">
+            <option value="recreational">
+            <option value="relaxation">
+            <option value="social"></option>
           </datalist>
           <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
@@ -69,7 +70,7 @@
   </div>
 
   <div class="container space-even">
-    <div class="section">
+    <div class="section hide" id="resultSection">
       <div class="row">
         <div class="col lg3 card">
           <h3 id="activity">ACTIVITY</h3>
@@ -94,9 +95,13 @@
         </div>
       </div>
       <div class="col lg3 card">
-        <h3 id="image">IMAGE</h3>
+        <h3 id="image"></h3>
         <img id="image-img"></img>
+        <button id="search-again" class="btn waves-effect waves-light btn-large" type="submit" name="action">Search Again
+          <i class="material-icons right">send</i>
+        </button>
       </div>
+      
     </div>
   </div>
 
