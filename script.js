@@ -1,8 +1,9 @@
 const activityEl = document.getElementById('activity-p')
 const priceEl = document.getElementById('price-p')
 const participantsEl = document.getElementById('participants-p')
-
+var submitBtn = document.querySelector('.btn')
 console.log(activityEl)
+
 
 
 
@@ -15,7 +16,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     var activityEl = document.getElementById('activity')
 
-    var selectedActivity = 'recreational'
+    var selectedActivity;
+
+    function getActivityCategory() {
+        selectedActivity = document.getElementById('searchBar').value;
+        console.log(selectedActivity);
+    };
+    
+
+    
 
     var apiQuery = "http://www.boredapi.com/api/activity?type=" + selectedActivity
 
@@ -79,7 +88,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //Melina's notes for branch testing
 
 
-});
+
 
 
 
@@ -212,3 +221,7 @@ var displayPhoto = function (photoList, category) {
 
 
 getUnsplashApi('Educational');
+
+submitBtn.addEventListener('click', getActivityCategory);
+
+});
