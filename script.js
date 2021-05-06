@@ -6,7 +6,7 @@ console.log(activityEl)
 var resultSection = document.querySelector('#resultSection')
 console.log(resultSection);
 var searchAgainBtn = document.querySelector('#search-again');
-var searchActivityCategory = document.querySelector('#search-activity-category');
+var activitySelector = document.querySelector('#activity-selector');
 
 var moneyOne = document.getElementById('moneyOne')
 var moneyTwo = document.getElementById('moneyTwo')
@@ -25,6 +25,7 @@ console.log("LLLLLLLL")
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    activitySelector.scrollIntoView({behavior: 'smooth'});
     event.preventDefault()
     //JS sheet begins here
     //ADD APIs HERE
@@ -174,8 +175,8 @@ var displayPhoto = function (photoList, category) {
 submitBtn.addEventListener('click', getActivityCategory);
 
 function goHere () {
+    activitySelector.scrollIntoView({behavior: 'smooth'});
     location.reload();
-    searchActivityCategory.scrollIntoView({behavior: 'smooth'});
 }
 searchAgainBtn.addEventListener('click', goHere);
 
