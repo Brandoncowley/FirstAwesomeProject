@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function checkParticipants(){
         //Checking Participants and assingning people icons
         if (data1.participants == 1){
-            console.log("one person")
+            console.log(data1.participants)
             personTwo.classList.add('hide');
             personThree.classList.add('hide')
             }
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 personThree.classList.add('hide')
             }
         }
-    
+    checkParticipants();
     resultSection.scrollIntoView({behavior: 'smooth'});
     }
 
