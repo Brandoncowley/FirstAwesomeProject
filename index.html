@@ -11,70 +11,150 @@
   <link href="parallax-template/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="parallax-template/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./style.css" />
+  
 
 </head>
-
 <body>
-
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header1 center teal-text text-lighten-2">Activity Selector</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">You're bored. <br>
-            Let's find an activity for you to do</h5>
+    <!--HERO BANNER-->
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <br><br>
+            <h1 class="header1 center teal-text text-lighten-2">Activity Selector</h1>
+            <div class="row center">
+              <h5 class="header col s12 light">You're bored. <br>
+                Let's find an activity for you to do</h5>
+            </div>
+            <br><br>
+          </div>
         </div>
-        <br><br>
+        <div class="parallax"><img src="hexagonImage.jpg" alt="background img 1"></div>
       </div>
-    </div>
-    <div class="parallax"><img src="hexagonImage.jpg" alt="Unsplashed background img 1"></div>
-  </div>
 
-
-  <div class="container">
-    <div class="section">
-      <div class="row">
-
-
+      <!--SEARCH BAR CONTAINER-->
+      <div class="container">
+        <div class="section">
+          <div class="row">
+            <div class="col s12 center d-none">
+              <h4>Search your Activity Category</h4>
+              <input list="activities" type="text" id="searchBar" size="26px">
+                <datalist id="activities">
+                  <option value="Busywork">
+                  <option value="Charity">
+                  <option value="Cooking">
+                  <option value="DIY">
+                  <option value="Educational">
+                  <option value="Music">
+                  <option value="Recreational">
+                  <option value="Relaxation">
+                  <option value="Social"></option>
+                </datalist>
+                <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Submit
+                  <i class="material-icons right">send</i>
+                </button>
+            </div>
+    
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+      <!--MIDDLE IMAGE-->
+      <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <div class="row center">
+              <div class="header details col s12 light">
+                <h5 class="glass">Let's give you the details on where below!</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="parallax"><img src="geometricImage.jpg" alt="Unsplashed background img 2"></div>
+      </div>
+      <!--OUTPUT CONTAINER-->
+      <div class="container space-even">
+        <div class="section" id="resultSection">
+          <div class="col">
+            <div class="row card activities">
+              <h3 id = "activity">ACTIVITY</h3>
+              <p id = "activity-p"></p>
+            </div>
+            <div class="row card price">
+              <h3 id="price">PRICE</h3>
+              <div id="price-p">
+                <i id = "moneyOne" class="fa fa-money fa-4x" aria-hidden="true"></i>
+                <i id ="moneyTwo"class="fa fa-money fa-4x" aria-hidden="true"></i>
+                <i id ="moneyThree"class="fa fa-money fa-4x" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="row card participants">
+              <h3 id="participants">PARTICIPANTS</h3>
+              <div id="participants-p">
+                <i id ="personOne" class="fa fa-user fa-4x" aria-hidden="true"></i>
+                <i id="personTwo" class="fa fa-user fa-4x" aria-hidden="true"></i>
+                <i id ="personThree" class="fa fa-user fa-4x" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="row card image">
+            <h3 id = "image">IMAGE</h3>
+            <img id="image-img"></img>
+          </div>
+          <div class = "search-again">
+            <button id="search-again" class="center btn waves-effect waves-light btn-large" type="submit" name="action">Looks like fun! Want to try again?</button>
+          </div>
+          
+        </div>
+      </div>
 
+  <!--BOTTOM IMAGE-->
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
           <div class="header details col s12 light">
-            <h5 class="glass">Let's give you the details on where below!</h5>
+            <h5 class="glass">Coded by Brandon, Melina, Mike, and Sean</h5>
           </div>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="geometricImage.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="geometricImage.jpg" alt="background img 3"></div>
   </div>
 
-  <div class="container space-even">
-    <div class="section hide" id="resultSection">
+  <!--FOOTER-->
+  <!-- <footer class="page-footer teal">
+    <div class="container">
       <div class="row">
-
-      </div>
-      
-    </div>
-  </div>
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
 
 
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">Awesome Project built by Brandon, Melina, Mike, and Sean</h5>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="metalFoilImage.jpg" alt="Unsplashed background img 3"></div>
-  </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer> -->
 
 
   <!--  Scripts-->
@@ -83,6 +163,5 @@
   <script src="parallax-template/js/init.js"></script>
   <script src="script.js"></script>
 
-</body>
-
+  </body>
 </html>
