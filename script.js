@@ -6,7 +6,7 @@ console.log(activityEl)
 var resultSection = document.querySelector('#resultSection')
 console.log(resultSection);
 var searchAgainBtn = document.querySelector('#search-again');
-var searchActivityCategory = document.querySelector('#search-activity-category');
+var activitySelector = document.querySelector('#activity-selector');
 
 var moneyOne = document.getElementById('moneyOne')
 var moneyTwo = document.getElementById('moneyTwo')
@@ -23,25 +23,30 @@ console.log("LLLLLLLL")
 
 
 
-
 document.addEventListener('DOMContentLoaded', (event) => {
+    activitySelector.scrollIntoView({behavior: 'smooth'});
     event.preventDefault()
-    //JS sheet begins here
-    //ADD APIs HERE
-    //var requestUrl = "http://www.boredapi.com/api/activity/"
+    console.log(this);
+    console.log('IS IT WORKING');
+    activitySelector.scrollIntoView({behavior: 'smooth'});
+    console.log('IS IT WORKING');
 
-    var activityEl = document.getElementById('activity')
 
-    
+    var activityEl = document.getElementById('activity') 
+
 
     function getActivityCategory() {
         var selectedActivity = document.getElementById('searchBar').value;
+        selectedActivity = selectedActivity.toLowerCase();
         console.log(selectedActivity);
         getApi(selectedActivity);
         getUnsplashApi(selectedActivity);
     };
     
-  
+    function getActivityForGoogleSearch() {
+        //get activity verbiaage
+        getGoogleLink("activityverbiage");
+    }
     
 
     function getApi(selectedActivity) {
@@ -114,7 +119,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
     resultSection.scrollIntoView({behavior: 'smooth'});
     }
 
-    
+   function getGoogleLink(activityString) {
+
+    string_to_array = function (str) {
+        return str.trim().split(" ");
+    };
+
+    var arrayToSearch = string_to_array(activityString);
+    console.log(arrayToSearch);
+
+    console.log(arrayToSearch.length);
+
+    var link = "https://google.com/search?q=how+to+";
+
+    for (var i=0; i<arrayToSearch.length-1; i++) {
+        link = link + arrayToSearch[i] + "+";
+    }
+
+    link = link + arrayToSearch[arrayToSearch.length-1];
+
+    console.log(link);
+}
+
 
 
 
@@ -159,6 +185,7 @@ function getUnsplashApi(category) {
 var displayPhoto = function (photoList, category) {
     console.log(photoList);
     var currentPhotoNum = (Math.floor(Math.random()*11));
+    console.log(currentPhotoNum);
     console.log(photoList.results[currentPhotoNum].urls.small);
     console.log(photoList.results[currentPhotoNum].alt_description);
     var imageContainer = document.getElementById('image-img');
@@ -173,11 +200,13 @@ var displayPhoto = function (photoList, category) {
 
 submitBtn.addEventListener('click', getActivityCategory);
 
-function goHere () {
-    location.reload();
-    searchActivityCategory.scrollIntoView({behavior: 'smooth'});
+function searchAgain () {
+    // console.log('HERE');
+    // activitySelector.scrollIntoView({behavior: 'smooth'});
+    document.location.reload();
+    //activitySelector.scrollIntoView({behavior: 'smooth'});
 }
-searchAgainBtn.addEventListener('click', goHere);
+searchAgainBtn.addEventListener('click', searchAgain);
 
 });
 
