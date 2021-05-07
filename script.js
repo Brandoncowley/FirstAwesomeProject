@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (data1.price == 0){
         console.log("Free")
         priceEl.innerHTML = "Free";
+        priceEl.classList.add('priceEl')
         }
         else if (data1.price > 0 && data1.price <= .2){
             console.log("Cheap");
@@ -204,6 +205,7 @@ function searchAgain () {
     // console.log('HERE');
     // activitySelector.scrollIntoView({behavior: 'smooth'});
     document.location.reload();
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
     //activitySelector.scrollIntoView({behavior: 'smooth'});
 }
 searchAgainBtn.addEventListener('click', searchAgain);

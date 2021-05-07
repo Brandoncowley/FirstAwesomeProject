@@ -120,3 +120,8 @@ text-align: center;}
 #hide {
   display: none;
 }
+
+.priceEl {
+  font-size: 60px;
+  font-family: 'Lobster', cursive;
+}
