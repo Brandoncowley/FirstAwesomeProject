@@ -20,6 +20,12 @@ p {
   height: auto;
   color: rgba(255,255,255,.9);
 }
+
+#top-text {
+  color: black;
+  margin-top: -2px;
+}
+
   .parallax-container .section {
     width: 100%;
   }
@@ -48,11 +54,10 @@ p {
 }
 
 .space-even {
-  /* display: flex; */
   justify-content: space-evenly;
   align-items: top;
   min-width: 100vw;
-  /* height: 500px; */
+  
 }
 
 .header1 {
@@ -77,7 +82,6 @@ p {
   font-size: 36px;
 }
 .activities {
-  /* min-width: 50VW; */
   text-align: center;
   justify-content: center;
 
@@ -85,14 +89,12 @@ p {
 
 
 .price {
-  /* min-width: 25vw; */
   text-align: center;
   justify-content: center;
 
 }
 
 .participants {
-  /* min-width: 25vw; */
   text-align: center;
   justify-content: center;
 
@@ -123,5 +125,9 @@ text-align: center;}
 
 .priceEl {
   font-size: 60px;
+  font-family: 'Lobster', cursive;
+}
+
+.activity {
   font-family: 'Lobster', cursive;
 }
