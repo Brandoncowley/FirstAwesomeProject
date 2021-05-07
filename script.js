@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function getApi(selectedActivity) {
         console.log(selectedActivity);
 
-        apiQuery = "http://www.boredapi.com/api/activity?type=" + selectedActivity
+        apiQuery = "https://www.boredapi.com/api/activity?type=" + selectedActivity
 
         console.log(apiQuery);
 
