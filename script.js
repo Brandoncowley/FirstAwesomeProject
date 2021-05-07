@@ -43,11 +43,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         getUnsplashApi(selectedActivity);
     };
     
-    function getActivityForGoogleSearch() {
-        //get activity verbiaage
-        getGoogleLink("activityverbiage");
-    }
-    
+
 
     function getApi(selectedActivity) {
         console.log(selectedActivity);
@@ -118,8 +114,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     checkParticipants();
     resultSection.scrollIntoView({behavior: 'smooth'});
+   
+    //get suggested activity to put into google search
+    function getActivityForGoogleSearch() {
+        var activityToDo = document.querySelector("#activity").textContent;
+        console.log(activityToDo);
+        getGoogleLink(activityToDo);
+    }
+    getActivityForGoogleSearch();   
+
     }
 
+    //use activity suggested to create google search for how to do that activity
    function getGoogleLink(activityString) {
 
     string_to_array = function (str) {
@@ -140,6 +146,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     link = link + arrayToSearch[arrayToSearch.length-1];
 
     console.log(link);
+
+    var googleLinkEl = document.getElementById('google-search');
+    googleLinkEl.setAttribute("target", "_blank");
+    googleLinkEl.setAttribute("href", link);
+
 }
 
 
