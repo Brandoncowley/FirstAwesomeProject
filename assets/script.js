@@ -220,11 +220,19 @@ function getUnsplashApi(category) {
                     displayPhoto(data, category);
                 });
             } else {
-                alert('Error: ' + response.statusText);
+                var modal2 = document.getElementById("modal2");
+                // initialize modal
+                $('.modal').modal();
+                //open modal
+                $('#modal2').modal('open');
             }
         })
         .catch(function(error) {
-            alert('unable to connect to Unsplash');
+            var modal3 = document.getElementById("modal3");
+            // initialize modal
+            $('.modal').modal();
+            //open modal
+            $('#modal3').modal('open');
         });
 };
 var displayPhoto = function (photoList, category) {
