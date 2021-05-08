@@ -22,13 +22,22 @@ var saveActivityBtn = document.getElementById('save');
 var savedActivityList = document.getElementById('saved-activity-list');
 var activityListHere = document.getElementById('activity-list-here');
 
+console.log("LLLLLLLL")
+console.log(personTwo)
+console.log(personThree)
+console.log("LLLLLLLL")
+
+
 
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
     activitySelector.scrollIntoView({behavior: 'smooth'});
     event.preventDefault()
+    console.log(this);
+    console.log('IS IT WORKING');
     activitySelector.scrollIntoView({behavior: 'smooth'});
+    console.log('IS IT WORKING');
 
     var displaySavedActivities = function () {
         $(savedActivityList).empty();
@@ -108,7 +117,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     };
     
 
-    //Bored API - get suggested activities based on category
+
     function getApi(selectedActivity) {
         console.log(selectedActivity);
 
@@ -177,7 +186,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
         }
     checkParticipants();
-    //scroll to results section when category submitted
     resultSection.scrollIntoView({behavior: 'smooth'});
    
     //get suggested activity to put into google search
@@ -213,13 +221,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
     console.log(link);
 
     var googleLinkEl = document.getElementById('google-search');
-    //open link in new page
     googleLinkEl.setAttribute("target", "_blank");
     googleLinkEl.setAttribute("href", link);
 
 }
 
-//second API - Unsplash to get images
+
+
+
+
+    //SECOND API - pull info from general query
+    //SECOND API - insert image that ties to the activity (Unsplash?)
+
+
+    //9 different categories, arrange in an array, w/ up to 10 activities being listed
+    //insert image that ties to the activity (Unsplash?)
+    //Give brief on the activity
+    //Data key can give visual representation (icon)
+
+
+    //LAYOUT: list, "click here for more information" - give items above
+    // - ALSO - possible tie in for musical selection
+
+    //Using modals are "like" popups, but not as restrictive
+
+
+
+
 function getUnsplashApi(category) {
     var key = '&client_id=n2fGqHKjWmuL15Ufx1eLf0EYsFiL2psgSMrAcGiciX4'
     console.log(category);
@@ -249,14 +277,20 @@ var displayPhoto = function (photoList, category) {
     console.log(imageContainer);
     imageContainer.src = photoList.results[currentPhotoNum].urls.small;
     imageContainer.alt = photoList.results[currentPhotoNum].alt_description;
+    // imageContainer.height = 250;
 }
+
+
+// getUnsplashApi('Educational');
 
 submitBtn.addEventListener('click', getActivityCategory);
 
 function searchAgain () {
-    //reload the page and scroll to the top to search again
+    // console.log('HERE');
+    // activitySelector.scrollIntoView({behavior: 'smooth'});
     document.location.reload();
     document.body.scrollTop = document.documentElement.scrollTop = 0;
+    //activitySelector.scrollIntoView({behavior: 'smooth'});
 }
 searchAgainBtn.addEventListener('click', searchAgain);
 
@@ -267,7 +301,6 @@ function saveThisActivity () {
     //puts new activity into local storage if isn't already there
     console.log(activityToDo);
     console.log(listOfSavedActivities);
-    //only add to local storage if specific activity not already there
     if (listOfSavedActivities.indexOf(activityToDo) === -1) {
         listOfSavedActivities.push(activityToDo);
         localStorage.setItem("activities", JSON.stringify(listOfSavedActivities));
