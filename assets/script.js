@@ -23,9 +23,12 @@ var activityListHere = document.getElementById('activity-list-here');
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    var elems = document.querySelectorAll ('select');
+    var instances = M.FormSelect.init (elems, []);
     activitySelector.scrollIntoView({behavior: 'smooth'});
     event.preventDefault()
     activitySelector.scrollIntoView({behavior: 'smooth'});
+
 
     var displaySavedActivities = function () {
         $(savedActivityList).empty();
