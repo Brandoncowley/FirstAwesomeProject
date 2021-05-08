@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="parallax-template/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="parallax-template/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -44,7 +45,7 @@
                   <option value="Charity">
                   <option value="Cooking">
                   <option value="DIY">
-                  <option value="Educational">
+                  <option value="Education">
                   <option value="Music">
                   <option value="Recreational">
                   <option value="Relaxation">
@@ -58,6 +59,22 @@
           </div>
         </div>
       </div>
+
+      <!-- Modal Trigger -->
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>Please select an activity category before submitting</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Got it!</a>
+    </div>
+  </div>
+
+
       <!--MIDDLE IMAGE-->
       <div class="parallax-container valign-wrapper">
         <div class="section no-pad-bot">
@@ -100,13 +117,29 @@
             <h3 id = "image"></h3>
             <img id="image-img"></img>
           </div>
-          <div class = "search-again">
-            <button id="search-again" class="center btn waves-effect waves-light btn-large" type="submit" name="action">Looks like fun! Want to try again?</button>
+          <div class = "result-buttons">
+            <button id="save" class="center btn waves-effect waves-light btn-large" type="submit" name="action">I like it! Save Activity</button> 
+          </div>
+          <div class = "result-buttons">
+            <button id="search-again" class="center btn waves-effect waves-light btn-large" type="submit" name="action">Looks like fun! But Want to try again?</button>
           </div>
           
         </div>
         </div>
       </div>
+
+      <!--SAVED ACTIVITIES-->
+      <div class="container space-even">
+        <div class="section" id="saved-activities">
+          <div class="col">
+            <div class="row card activities">
+              <h3 id = "activity-list-here">My Saved Activities:</h3>
+              <ul id=saved-activity-list></ul>
+            </div>
+        </div>
+        </div>
+      </div>
+
 
   <!--BOTTOM IMAGE-->
   <div class="parallax-container valign-wrapper">
@@ -125,8 +158,10 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="parallax-template/js/materialize.js"></script>
   <script src="parallax-template/js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="script.js"></script>
 
   </body>

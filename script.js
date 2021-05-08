@@ -8,11 +8,19 @@ console.log(resultSection);
 var searchAgainBtn = document.querySelector('#search-again');
 var activitySelector = document.querySelector('#activity-selector');
 
+var activityToDo;
+
 var moneyOne = document.getElementById('moneyOne')
 var moneyTwo = document.getElementById('moneyTwo')
 var moneyThree = document.getElementById('moneyThree')
 var personTwo = document.getElementById("personTwo")
 var personThree = document.getElementById('personThree')
+
+var listOfSavedActivities;
+console.log(listOfSavedActivities);
+var saveActivityBtn = document.getElementById('save');
+var savedActivityList = document.getElementById('saved-activity-list');
+
 
 console.log("LLLLLLLL")
 console.log(personTwo)
@@ -31,16 +39,79 @@ document.addEventListener('DOMContentLoaded', (event) => {
     activitySelector.scrollIntoView({behavior: 'smooth'});
     console.log('IS IT WORKING');
 
+    var displaySavedActivities = function () {
+        listOfSavedActivities;
+        //sets to empty array if nothing in local storage
+        if (localStorage.getItem("activities") === null) {
+            listOfSavedActivities = [];
+            console.log(listOfSavedActivities);
+        }
+        
+        //if data is in local storage, retrive it and put it into object
+        else {
+            listOfSavedActivities = [];
+            console.log(listOfSavedActivities);
+            listOfSavedActivities = JSON.parse(localStorage.getItem("activities"));
+        }
+        console.log(listOfSavedActivities);
+
+        //display saved activities
+        for (var i=0; i<listOfSavedActivities.length; i++) {
+            var activityToLink = listOfSavedActivities[i];
+            
+            string_to_array = function (str) {
+                return str.trim().split(" ");
+            };
+        
+            var arrayToSearch = string_to_array(activityToLink);
+            console.log(arrayToSearch);
+        
+            console.log(arrayToSearch.length);
+        
+            var link = "https://google.com/search?q=how+to+";
+        
+            for (var j=0; j<arrayToSearch.length-1; j++) {
+                link = link + arrayToSearch[j] + "+";
+            }
+        
+            link = link + arrayToSearch[arrayToSearch.length-1];
+        
+            console.log(link);
+
+            var a = document.createElement("a");
+            a.setAttribute("href", link);
+            a.setAttribute("target", "_blank");
+            savedActivityList.appendChild(a)
+
+            var li = document.createElement("li");
+            li.classList.add('activity-list-items');
+            li.innerHTML = listOfSavedActivities[i];
+            a.appendChild(li);
+        }
+    }
+    displaySavedActivities();
 
     var activityEl = document.getElementById('activity') 
 
 
     function getActivityCategory() {
+        var modal1 = document.getElementById("modal1");
         var selectedActivity = document.getElementById('searchBar').value;
+        console.log(typeof(selectedActivity));
+        console.log(modal1);
+        if (selectedActivity === '') {
+            console.log('NO ENTRY');
+            // initialize modal
+            $('.modal').modal();
+            //open modal
+            $('#modal1').modal('open');
+
+        } else {
         selectedActivity = selectedActivity.toLowerCase();
         console.log(selectedActivity);
         getApi(selectedActivity);
         getUnsplashApi(selectedActivity);
+        }
     };
     
 
@@ -117,7 +188,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
    
     //get suggested activity to put into google search
     function getActivityForGoogleSearch() {
-        var activityToDo = document.querySelector("#activity").textContent;
+        activityToDo = document.querySelector("#activity").textContent;
         console.log(activityToDo);
         getGoogleLink(activityToDo);
     }
@@ -196,7 +267,7 @@ function getUnsplashApi(category) {
 };
 var displayPhoto = function (photoList, category) {
     console.log(photoList);
-    var currentPhotoNum = (Math.floor(Math.random()*11));
+    var currentPhotoNum = (Math.floor(Math.random()*10));
     console.log(currentPhotoNum);
     console.log(photoList.results[currentPhotoNum].urls.small);
     console.log(photoList.results[currentPhotoNum].alt_description);
@@ -220,6 +291,20 @@ function searchAgain () {
     //activitySelector.scrollIntoView({behavior: 'smooth'});
 }
 searchAgainBtn.addEventListener('click', searchAgain);
+
+console.log(listOfSavedActivities);
+
+function saveThisActivity () {
+    console.log('save it here');
+    //puts new activity into local storage if isn't already there
+    console.log(activityToDo);
+    console.log(listOfSavedActivities);
+    if (listOfSavedActivities.indexOf(activityToDo) === -1) {
+        listOfSavedActivities.push(activityToDo);
+        localStorage.setItem("activities", JSON.stringify(listOfSavedActivities));
+    }
+}
+saveActivityBtn.addEventListener('click', saveThisActivity);
 
 });
 
