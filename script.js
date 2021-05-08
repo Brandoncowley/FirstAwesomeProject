@@ -20,7 +20,7 @@ var listOfSavedActivities;
 console.log(listOfSavedActivities);
 var saveActivityBtn = document.getElementById('save');
 var savedActivityList = document.getElementById('saved-activity-list');
-
+var activityListHere = document.getElementById('activity-list-here');
 
 console.log("LLLLLLLL")
 console.log(personTwo)
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     console.log('IS IT WORKING');
 
     var displaySavedActivities = function () {
+        $(savedActivityList).empty();
         listOfSavedActivities;
         //sets to empty array if nothing in local storage
         if (localStorage.getItem("activities") === null) {
@@ -49,6 +50,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         
         //if data is in local storage, retrive it and put it into object
         else {
+            activityListHere.classList.remove("hide");
             listOfSavedActivities = [];
             console.log(listOfSavedActivities);
             listOfSavedActivities = JSON.parse(localStorage.getItem("activities"));
@@ -303,6 +305,7 @@ function saveThisActivity () {
         listOfSavedActivities.push(activityToDo);
         localStorage.setItem("activities", JSON.stringify(listOfSavedActivities));
     }
+displaySavedActivities();    
 }
 saveActivityBtn.addEventListener('click', saveThisActivity);
 
