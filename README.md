@@ -13,5 +13,5 @@ LINK TO LIVE PROJECT:
 
 https://brandoncowley.github.io/FirstAwesomeProject//
 
-![Screenshot of the operational website.](./WebsiteScreenshot.jpg)
+![Screenshot of the operational website.](./assets/WebsiteScreenshot.jpg)
 
