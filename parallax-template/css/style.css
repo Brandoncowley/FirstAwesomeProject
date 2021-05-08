@@ -111,8 +111,10 @@ p {
   width: 35%;
 }
 
-.search-again{
-text-align: center;}
+.result-buttons{
+text-align: center;
+padding: 1%;
+}
 
 .hide {
   display:none;
